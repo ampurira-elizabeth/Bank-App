@@ -1,8 +1,11 @@
 package dev.liz.myproject
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Switch
+import android.widget.TextView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
@@ -16,6 +19,7 @@ class CreateActivity : AppCompatActivity() {
     lateinit var etSecond:TextInputEditText
     lateinit var etPhone:TextInputEditText
     lateinit var etPassword:TextInputEditText
+    lateinit var swtPay:Switch
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +33,14 @@ class CreateActivity : AppCompatActivity() {
         etSecond=findViewById(R.id.etSecond)
         etPhone=findViewById(R.id.etPhone)
         etPassword=findViewById(R.id.etPassword)
+        swtPay=findViewById(R.id.swtPay)
+        swtPay.setOnClickListener {
+            var intent=Intent(this,BillPayActivity::class.java)
+            startActivity(intent)
+        }
+
+
+
 
         btnAcc.setOnClickListener {
            validate()
@@ -39,6 +51,7 @@ class CreateActivity : AppCompatActivity() {
         var  second=etSecond.text.toString()
         var phone=etPhone.text.toString()
         var pass=etPassword.text.toString()
+
         if (fast.isBlank()){
             tilFirstname.error="First name required please"
     }
@@ -48,9 +61,11 @@ class CreateActivity : AppCompatActivity() {
         if (phone.isBlank()){
             tilPhone.error="Phone number required please "
         }
-        if (pass.isBlank()){
-            tilPassword.error="Password required please"
-
+        if (pass.length>16){
+            tilPassword.error=" Your Password is too long"
+        }
+        if (pass.length<8){
+            tilPassword.error="Your password is too short"
         }
 
     }
