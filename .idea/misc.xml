@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/background_image.xml" value="0.2015" />
+        <entry key="app/src/main/res/drawable/corner.xml" value="0.2015" />
+        <entry key="app/src/main/res/drawable/gradient_background.xml" value="0.2015" />
+        <entry key="app/src/main/res/layout/activity_bank.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_bill_pay.xml" value="0.17864583333333334" />
         <entry key="app/src/main/res/layout/activity_create.xml" value="0.14903846153846154" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.19375" />
