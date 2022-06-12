@@ -7,4 +7,14 @@
     android:background="@drawable/gradient_background"
     tools:context=".BankActivity">
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/btn_navBank"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/buton_nav"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

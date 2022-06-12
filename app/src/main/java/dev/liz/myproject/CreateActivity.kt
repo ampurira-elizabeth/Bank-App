@@ -51,22 +51,34 @@ class CreateActivity : AppCompatActivity() {
         var  second=etSecond.text.toString()
         var phone=etPhone.text.toString()
         var pass=etPassword.text.toString()
+        var error=false
 
         if (fast.isBlank()){
             tilFirstname.error="First name required please"
+            error=true
     }
         if (second.isBlank()){
             tilSecond.error="Second name is required please"
+            error=true
         }
         if (phone.isBlank()){
             tilPhone.error="Phone number required please "
+            error=true
+
         }
         if (pass.length>16){
             tilPassword.error=" Your Password is too long"
+            error=true
         }
         if (pass.length<8){
             tilPassword.error="Your password is too short"
+            error=true
         }
+        if (!error){
+            startActivity(Intent(this,BankActivity::class.java))
+            finish()
+        }
+
 
     }
 

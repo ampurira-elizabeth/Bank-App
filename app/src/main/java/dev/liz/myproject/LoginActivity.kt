@@ -20,8 +20,6 @@ class LoginActivity : AppCompatActivity() {
         etEmail=findViewById(R.id.etEmail)
         etPass=findViewById(R.id.etPass)
         btnLog2.setOnClickListener {
-//            var intent=Intent(this,CreateActivity::class.java)
-//            startActivity(intent)
             validate()
         }
         tvSignup.setOnClickListener {
@@ -33,12 +31,19 @@ class LoginActivity : AppCompatActivity() {
     fun validate(){
         var email=etEmail.text.toString()
         var pass=etPass.text.toString()
+        var error=false
         if (email.isBlank()){
             etEmail.error="Email required please"
+            error=true
         }
         if (pass.isBlank()){
             etPass.error="password required please"
+            error=true
 
+        }
+        if (!error){
+            startActivity(Intent(this,BankActivity::class.java))
+            finish()
         }
     }
 }
