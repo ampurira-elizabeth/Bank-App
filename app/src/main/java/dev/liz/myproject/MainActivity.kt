@@ -5,22 +5,23 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import dev.liz.myproject.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
-    lateinit var btnLog:Button
-    lateinit var btnCreate:Button
+    lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding= ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        btnLog=findViewById(R.id.btnLog)
-        btnLog.setOnClickListener {
+       binding. btnLog.setOnClickListener {
             var intent=Intent(this,LoginActivity::class.java)
             startActivity(intent)
         }
-        btnCreate=findViewById(R.id.btnCreate)
-        btnCreate.setOnClickListener {
+
+        binding.btnCreate.setOnClickListener {
             var intent=Intent(this,CreateActivity::class.java)
             startActivity(intent)
         }

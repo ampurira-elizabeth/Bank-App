@@ -6,38 +6,34 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import dev.liz.myproject.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
-    lateinit var btnLog2:Button
-    lateinit var etEmail:EditText
-    lateinit var etPass:EditText
-    lateinit var tvSignup:TextView
+   lateinit var binding:ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
-        btnLog2=findViewById(R.id.btnLog2)
-        tvSignup=findViewById(R.id.tvSignup)
-        etEmail=findViewById(R.id.etEmail)
-        etPass=findViewById(R.id.etPass)
-        btnLog2.setOnClickListener {
+        binding= ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.btnLog2.setOnClickListener {
             validate()
         }
-        tvSignup.setOnClickListener {
+        binding.tvSignup.setOnClickListener {
             var intent=Intent(this,CreateActivity::class.java)
             startActivity(intent)
         }
 
     }
     fun validate(){
-        var email=etEmail.text.toString()
-        var pass=etPass.text.toString()
+        var email=binding.etEmail.text.toString()
+        var pass=binding.etPass.text.toString()
         var error=false
         if (email.isBlank()){
-            etEmail.error="Email required please"
+            binding.etEmail.error="Email required please"
             error=true
         }
         if (pass.isBlank()){
-            etPass.error="password required please"
+            binding.etPass.error="password required please"
             error=true
 
         }
