@@ -8,13 +8,25 @@
     tools:context=".BankActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/btn_navBank"
+        android:id="@+id/bnvHome"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/buton_nav"
+        app:menu="@menu/button_nav"
         />
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fcvHome"
+        android:name="dev.liz.myproject.DepositFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bnvHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        tools:layout="@layout/fragment_deposit" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

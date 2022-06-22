@@ -22,10 +22,6 @@ class CreateActivity : AppCompatActivity() {
             var intent=Intent(this,BillPayActivity::class.java)
             startActivity(intent)
         }
-
-
-
-
         binding.btnAcc.setOnClickListener {
            validate()
         }

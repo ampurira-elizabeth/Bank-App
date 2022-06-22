@@ -13,6 +13,9 @@
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_qr_code.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/fragment_deposit.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/fragment_loan.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.19375" />
         <entry key="app/src/main/res/menu/buton_nav.xml" value="0.19375" />
         <entry key="app/src/main/res/menu/m.xml" value="0.19375" />
       </map>
